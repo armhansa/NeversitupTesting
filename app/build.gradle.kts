@@ -56,6 +56,21 @@ dependencies {
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
 
+    // RxAndroid
+    val rxAndroidVersion = "3.0.2"
+    val rxJavaVersion = "3.1.8"
+    implementation("io.reactivex.rxjava3:rxandroid:$rxAndroidVersion")
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    // (see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version)
+    implementation("io.reactivex.rxjava3:rxjava:$rxJavaVersion")
+
+    // Retrofit with rxJava adapter
+    val retrofitVersion = "2.9.0"
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion")
+
     // Testing
     val jUnitVersion = "4.13.2"
     val jUnitExtVersion = "1.1.5"

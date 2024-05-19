@@ -1,9 +1,10 @@
-package com.armhansa.neversituptesting.presentation
+package com.armhansa.neversituptesting.presentation.activity
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.armhansa.neversituptesting.databinding.ActivityMainBinding
+import com.armhansa.neversituptesting.presentation.display.DepartmentDisplay
+import com.armhansa.neversituptesting.presentation.display.ProductDisplay
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -18,18 +19,20 @@ class MainActivity : AppCompatActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        initialView()
         presenter.setView(this)
+        presenter.start()
     }
 
-    private fun initialView() {
-        binding.tvTest.setOnClickListener {
-            presenter.testDi()
-        }
+    override fun setupDepartmentsData(display: List<DepartmentDisplay>) {
+        // TODO: Render to Department List
     }
 
-    override fun updateData() {
-        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show()
+    override fun setupProductsData(display: List<ProductDisplay>) {
+        // TODO: Render to Product list
     }
 
+    override fun onDestroy() {
+        presenter.onDestroy()
+        super.onDestroy()
+    }
 }

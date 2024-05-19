@@ -20,3 +20,8 @@ This package only contains the Service Retrofit DI Module to provide ProductServ
 This is the most important package it handles view activity and user interact
 
 * PS. I have skipped the domain package for speed coding
+
+## Application Preview
+
+[Nevershoping Preview.webm](https://github.com/armhansa/NeversitupTesting/assets/15827999/5f2c5653-ddc1-44a6-ad40-8a46dd6b959f)
+

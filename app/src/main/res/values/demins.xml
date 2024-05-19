@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  View Margin  -->
+    <dimen name="default_margin_4">4dp</dimen>
+    <dimen name="default_margin_8">8dp</dimen>
+    <dimen name="default_margin_16">16dp</dimen>
+
+    <!--  Text Size  -->
+    <dimen name="default_text_size_page_title">22sp</dimen>
+    <dimen name="default_text_size_product_desc">18sp</dimen>
+    <dimen name="default_text_size_department_desc">14sp</dimen>
+
+    <!-- Custom -->
+    <dimen name="spacer_height">1dp</dimen>
+    <dimen name="card_department_width_height">100dp</dimen>
+
+</resources>

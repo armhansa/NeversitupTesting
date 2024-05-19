@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">NeversitupTesting</string>
+    <string name="app_name">Nevershoping</string>
+    <string name="department_carousel_title">Department Carousel</string>
+    <string name="product_list_title">Product list : %1$s</string>
 </resources>

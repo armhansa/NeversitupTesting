@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cvProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin_8">
+        android:layout_margin="@dimen/default_margin_8"
+        app:cardCornerRadius="@dimen/default_margin_16">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivProduct"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:minHeight="@dimen/card_department_width_height" />
+                android:layout_height="@dimen/card_department_height" />
 
             <View
                 android:layout_width="match_parent"
@@ -40,6 +42,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/default_margin_8"
                 android:layout_marginTop="@dimen/default_margin_8"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:textAppearance="@style/TextProductDesc"
                 tools:text="Desc" />
 

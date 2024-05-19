@@ -8,12 +8,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin_16"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/default_margin_16"
+            android:layout_marginTop="@dimen/default_margin_16"
             android:text="@string/department_carousel_title"
             android:textAppearance="@style/TextTitle" />
 
@@ -21,7 +22,8 @@
             android:id="@+id/rvDepartment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_margin_16"
+            android:layout_marginTop="@dimen/default_margin_8"
+            android:paddingHorizontal="@dimen/default_margin_4"
             tools:itemCount="1"
             tools:listitem="@layout/item_department" />
 
@@ -29,6 +31,7 @@
             android:id="@+id/tvProductTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/default_margin_16"
             android:layout_marginTop="@dimen/default_margin_16"
             android:textAppearance="@style/TextTitle"
             tools:text="@string/product_list_title" />
@@ -37,8 +40,9 @@
             android:id="@+id/rvProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_margin_16"
+            android:paddingVertical="@dimen/default_margin_8"
             android:nestedScrollingEnabled="false"
+            android:paddingHorizontal="@dimen/default_margin_8"
             tools:itemCount="3"
             tools:listitem="@layout/item_product" />
 

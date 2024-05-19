@@ -2,4 +2,7 @@
     <string name="app_name">Nevershoping</string>
     <string name="department_carousel_title">Department Carousel</string>
     <string name="product_list_title">Product list : %1$s</string>
+    <string name="price_suffix">%1$s$</string>
+    <string name="close_button">Close</string>
+    <string name="product_description">Product Description</string>
 </resources>

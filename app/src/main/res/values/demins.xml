@@ -7,12 +7,15 @@
     <dimen name="default_margin_16">16dp</dimen>
 
     <!--  Text Size  -->
-    <dimen name="default_text_size_page_title">22sp</dimen>
-    <dimen name="default_text_size_product_desc">18sp</dimen>
+    <dimen name="default_text_size_page_title">16sp</dimen>
     <dimen name="default_text_size_department_desc">14sp</dimen>
+    <dimen name="default_text_size_product_desc">12sp</dimen>
+    <dimen name="default_text_size_product_detail_dialog">14sp</dimen>
 
     <!-- Custom -->
     <dimen name="spacer_height">1dp</dimen>
-    <dimen name="card_department_width_height">100dp</dimen>
+    <dimen name="card_department_width">96dp</dimen>
+    <dimen name="card_department_height">72dp</dimen>
+    <dimen name="product_image_max_height">120dp</dimen>
 
 </resources>

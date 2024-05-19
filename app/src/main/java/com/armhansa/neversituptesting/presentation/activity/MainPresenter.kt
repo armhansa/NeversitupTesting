@@ -9,7 +9,7 @@ class MainPresenter @Inject constructor(
 ) {
 
     private var view: MainView? = null
-
+    private var currentDepartmentId: String = ""
     private var departments: List<DepartmentDisplay>? = null
 
     fun setView(view: MainView) {
@@ -20,10 +20,11 @@ class MainPresenter @Inject constructor(
         view?.showFullscreenLoading()
         repository.getDepartmentsAndDefaultProducts(
             onSuccess = { departments, products ->
-                this.departments = departments
                 view?.run {
+                    this@MainPresenter.departments = departments
+                    currentDepartmentId = departments.first().id
                     setupDepartmentsData(departments)
-                    setupProductsData(products)
+                    setupProductsData(products, departments.first())
                     hideFullscreenLoading()
                 }
             },
@@ -34,21 +35,24 @@ class MainPresenter @Inject constructor(
         )
     }
 
-    fun onDepartmentChanged(index: Int) {
-        view?.showFullscreenLoading()
-        repository.getProducts(
-            onSuccess = {
-                view?.run {
-                    setupProductsData(it)
-                    hideFullscreenLoading()
-                }
-            },
-            onError = {
-                view?.hideFullscreenLoading()
-                // TODO: Show PopUp Error or Just Toast
-            },
-            departments?.get(index)?.id.orEmpty()
-        )
+    fun onDepartmentChanged(department: DepartmentDisplay) {
+        if (department.id != currentDepartmentId) {
+            view?.showFullscreenLoading()
+            repository.getProducts(
+                onSuccess = {
+                    view?.run {
+                        currentDepartmentId = department.id
+                        setupProductsData(it, department)
+                        hideFullscreenLoading()
+                    }
+                },
+                onError = {
+                    view?.hideFullscreenLoading()
+                    // TODO: Show PopUp Error or Just Toast
+                },
+                department.id
+            )
+        }
     }
 
     fun onDestroy() {

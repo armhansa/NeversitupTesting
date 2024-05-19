@@ -47,9 +47,11 @@ dependencies {
     val kotlinXVersion = "1.13.1"
     val appCompatVersion = "1.6.1"
     val materialVersion = "1.12.0"
+    val glideVersion = "4.16.0"
     implementation("androidx.core:core-ktx:$kotlinXVersion")
     implementation("androidx.appcompat:appcompat:$appCompatVersion")
     implementation("com.google.android.material:material:$materialVersion")
+    implementation("com.github.bumptech.glide:glide:$glideVersion")
 
     // Hilt DI
     val hiltVersion = "2.51.1"

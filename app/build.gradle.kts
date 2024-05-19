@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
+    // Hilt
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -39,11 +43,31 @@ android {
 }
 
 dependencies {
+    // Versions Ext
+    val hiltVersion = "2.51.1"
+    val kotlinXVersion = "1.13.1"
+    val appCompatVersion = "1.6.1"
+    val materialVersion = "1.12.0"
+    val jUnitVersion = "4.13.2"
+    val jUnitExtVersion = "1.1.5"
+    val espressoVersion = "3.5.1"
 
-    implementation("androidx.core:core-ktx:1.13.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    // Hilt DI
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+
+    // View
+    implementation("androidx.core:core-ktx:$kotlinXVersion")
+    implementation("androidx.appcompat:appcompat:$appCompatVersion")
+    implementation("com.google.android.material:material:$materialVersion")
+
+    // Testing
+    testImplementation("junit:junit:$jUnitVersion")
+    androidTestImplementation("androidx.test.ext:junit:$jUnitExtVersion")
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
